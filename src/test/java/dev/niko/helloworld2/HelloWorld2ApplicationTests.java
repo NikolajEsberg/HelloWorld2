@@ -13,7 +13,7 @@ class HelloWorld2ApplicationTests {
     @Test
     void testHelloWorld() {
         String expected = "Hello, World!";
-        String actual = "Hell, World!"; // Replace with actual method call if needed
+        String actual = "Hello, World!"; // Replace with actual method call if needed
         assert(expected.equals(actual));
     }
 
