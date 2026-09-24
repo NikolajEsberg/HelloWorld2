@@ -6,4 +6,4 @@ docker logs min-container
 docker stop min-container
 docker stop min-anden-container
 docker rm min-container
-docker rn min-anden-container
+docker rm min-anden-container
