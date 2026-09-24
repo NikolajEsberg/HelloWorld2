@@ -10,3 +10,6 @@ jobs:
       - run: bash container.sh
       - run: bash container.sh
       - run: docker build -t mit-image .
+      - run: docker run -d --name site -p 8080:8000 mit-image
+      - run: sleep 2 && curl -f localhost:8080
+      - run: docker rm -f site
