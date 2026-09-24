@@ -8,6 +8,7 @@ if ! docker run --rm alpine cat /data/besked.txt; then
   echo "Som forventet: uden volumen kan containeren ikke se filen"
 fi
 
-docker run --rm --name skriver -v data:/data mit-image2 sh -c "echo Besked fra mit eget image! > /data/mitimage.txt"
-docker rm -f skriver 2>/dev/null || true
+docker run -d --name skriver -v data:/data mit-image2
+docker exec skriver sh -c "echo Besked fra mit eget image! > /data/mitimage.txt"
+docker rm -f skriver
 docker run --rm -v data:/data alpine cat /data/mitimage.txt
